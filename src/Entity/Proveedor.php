@@ -103,6 +103,7 @@ class Proveedor
     public function getActivo(): ?bool
     {
         return $this->activo;
+        
     }
 
     public function setActivo(bool $activo): self
