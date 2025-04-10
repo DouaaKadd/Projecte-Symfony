@@ -6,6 +6,7 @@ use App\Repository\ProveedorRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * @ORM\Entity(repositoryClass=ProveedorRepository::class)
  */
@@ -39,7 +40,7 @@ class Proveedor
      *     min=9,
      *     max=18,
      *     minMessage="El teléfono debe tener al menos 9 caracteres.",
-     *     maxMessage="El teléfono no puede tener más de 15 caracteres."
+     *     maxMessage="El teléfono no puede tener más de 18 caracteres."
      * )
      */
     private $telefono_contacto;
