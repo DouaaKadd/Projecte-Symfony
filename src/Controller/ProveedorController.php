@@ -119,5 +119,14 @@ class ProveedorController extends AbstractController
 
         return $this->redirectToRoute('app_proveedor');
     }
+/**
+
+*@Route("/proveedor/ver/{id}", name="ver_proveedor") */
+
+public function ver(int $id, EntityManagerInterface $entityManager): Response { $proveedor = $entityManager->getRepository(Proveedor::class)->find($id);
+
+    if (!$proveedor) { throw $this->createNotFoundException('Proveedor no encontrado'); }
+
+    return $this->render('proveedor/ver.html.twig', [ 'proveedor' => $proveedor, ]); }
 
 }

@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Listado de Proveedores - ViajesParaTi{% endblock %}
 
 {% block body %}
@@ -39,14 +40,12 @@
                                             <span class="badge bg-danger">No</span>
                                         {% endif %}
                                     </td>
-                                    <td class="text-end">
-                                        <a href="{{ path('editar_proveedor', { 'id': proveedor.id }) }}" class="btn btn-sm btn-primary me-1">
-                                            <i class="bi bi-pencil-square"></i> Editar
-                                        </a>
-                                        <a href="{{ path('eliminar_proveedor', {'id': proveedor.id}) }}" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este proveedor?');">
-                                            <i class="bi bi-trash"></i> Eliminar
-                                        </a>
-                                    </td>
+                                    <td class="text-end"> <a href="{{ path('ver_proveedor', { 'id': proveedor.id }) }}" class="btn btn-sm btn-info me-1 text-white"> 
+                                    <i class="bi bi-eye"></i> Ver </a> 
+                                    <a href="{{ path('editar_proveedor', 
+                                    { 'id': proveedor.id }) }}" class="btn btn-sm btn-primary me-1"> <i class="bi bi-pencil-square"></i> Editar </a> <a href="{{ path('eliminar_proveedor',
+                                    {'id': proveedor.id}) }}" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este proveedor?');"> 
+                                    <i class="bi bi-trash"></i> Eliminar </a> </td>
                                 </tr>
                             {% else %}
                                 <tr>

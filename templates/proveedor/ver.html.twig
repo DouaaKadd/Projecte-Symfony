@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% extends 'footer.html.twig' %}
+
+
+{% block title %}Detalle del Proveedor - ViajesParaTi{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Detalle del Proveedor</h5>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Nombre</dt>
+                    <dd class="col-sm-8">{{ proveedor.nombre }}</dd>
+
+                    <dt class="col-sm-4">Correo Electrónico</dt>
+                    <dd class="col-sm-8">{{ proveedor.correoElectronico }}</dd>
+
+                    <dt class="col-sm-4">Teléfono</dt>
+                    <dd class="col-sm-8">{{ proveedor.telefonoContacto }}</dd>
+
+                    <dt class="col-sm-4">Tipo</dt>
+                    <dd class="col-sm-8">{{ proveedor.tipoProveedor|capitalize }}</dd>
+
+                    <dt class="col-sm-4">Activo</dt>
+                    <dd class="col-sm-8">
+                        {% if proveedor.activo %}
+                            <span class="badge bg-success">Sí</span>
+                        {% else %}
+                            <span class="badge bg-danger">No</span>
+                        {% endif %}
+                    </dd>
+                </dl>
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{{ path('app_proveedor') }}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
