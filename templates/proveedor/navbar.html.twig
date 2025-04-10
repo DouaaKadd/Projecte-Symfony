@@ -1,19 +1,30 @@
- <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">ViajesParaTi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_proveedor') }}"><i class="bi bi-card-list"></i> Proveedores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('crear_proveedor') }}"><i class="bi bi-plus-circle"></i> Crear</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="#">ViajesParaTi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_proveedor') }}">
+                        <i class="bi bi-card-list"></i> Proveedores
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('crear_proveedor') }}">
+                        <i class="bi bi-plus-circle"></i> Crear
+                    </a>
+                </li>
+            </ul>
+
+            {# Formulario de búsqueda decorativo #}
+            <form class="d-flex" onsubmit="event.preventDefault();">
+                <input class="form-control me-2" type="search" placeholder="Buscar proveedor" aria-label="Buscar">
+                <button class="btn btn-light" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
         </div>
-    </nav>
+    </div>
+</nav>
