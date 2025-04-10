@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crear Proveedor - ViajesParaTi{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Crear Proveedor</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ path('guardar_proveedor') }}">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo_electronico" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono_contacto" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipo" class="form-label">Tipo de Proveedor</label>
+                        <select name="tipo" class="form-select" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="pista">Pista</option>
+                            <option value="complemento">Complemento</option>
+                        </select>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="activo" name="activo" value="1">
+                        <label class="form-check-label" for="activo">Activo</label>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ path('app_proveedor') }}" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Atrás
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

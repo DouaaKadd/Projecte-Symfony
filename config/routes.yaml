@@ -1,0 +1,34 @@
+index:
+    path: /
+    controller: App\Controller\ProveedorController::index
+
+# config/routes.yaml
+app_proveedor:
+    path: /proveedor
+    controller: App\Controller\ProveedorController::index
+    methods: GET
+
+crear_proveedor:
+    path: /proveedor/crear
+    controller: App\Controller\ProveedorController::crear
+    methods: GET|POST
+
+guardar_proveedor:
+    path: /proveedor/guardar
+    controller: App\Controller\ProveedorController::guardar
+    methods: POST
+
+eliminar_proveedor:
+    path: /proveedor/eliminar/{id}
+    controller: App\Controller\ProveedorController::eliminar
+    methods: GET
+
+editar_proveedor:
+    path: /proveedor/editar/{id}
+    controller: App\Controller\ProveedorController::editar
+    methods: [GET, PUT, POST]
+
+actualizar_proveedor:
+    path: /proveedor/actualizar
+    controller: App\Controller\ProveedorController::actualizar
+    methods: POST

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Proveedor - ViajesParaTi{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Editar Proveedor</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ path('actualizar_proveedor') }}">
+                    <input type="hidden" name="id" value="{{ proveedor.id }}">
+
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ proveedor.nombre }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="correo_electronico" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" value="{{ proveedor.correoElectronico }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefono_contacto" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono_contacto" name="telefono_contacto" value="{{ proveedor.telefonoContacto }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tipo" class="form-label">Tipo de Proveedor</label>
+                        <select name="tipo" class="form-select" required>
+                            <option value="" disabled>Selecciona una opción</option>
+                            <option value="hotel" {% if proveedor.tipoProveedor == 'hotel' %}selected{% endif %}>Hotel</option>
+                            <option value="pista" {% if proveedor.tipoProveedor == 'pista' %}selected{% endif %}>Pista</option>
+                            <option value="complemento" {% if proveedor.tipoProveedor == 'complemento' %}selected{% endif %}>Complemento</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="activo" name="activo" value="1" {% if proveedor.activo %}checked{% endif %}>
+                        <label for="activo" class="form-check-label">Activo</label>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ path('app_proveedor') }}" class="btn btn-danger">
+                            <i class="bi bi-x-circle"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Guardar Cambios
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
